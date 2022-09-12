@@ -1,0 +1,7 @@
+###
+POST http://localhost:3001/katana-ml/api/v1.0/forecast/ironsteel
+Content-Type: application/json
+
+{
+    "horizon": "10"
+}
