@@ -15,3 +15,13 @@ Note: in the future I'll make a cleanup on the code... ^^
 #Install
 Make sure you have docker and docker-compose and run: docker-compose up --build
 You can use api.http ou postman... test.
+
+If you have problem with Docker maybe a possible solution:
+   1- Delete all containers: docker rm -vf $(docker ps -aq)
+   and after that
+   2- Delete all imagens: docker rmi -f $(docker images -aq)
+
+Some times you need to try multiple times run docker-compose up --build,
+yes maybe the server is down... have some problems and etc. This is common in
+multiples stages of the instalation. This is a pain... 
+

@@ -1,7 +1,579 @@
 ###
-POST http://localhost:3001/katana-ml/api/v1.0/forecast/ironsteel
+GET http://localhost:3001/katana-ml/api/v1.0/forecast/ironsteel
 Content-Type: application/json
 
 {
     "horizon": "10"
 }
+
+
+# ###
+# POST http://localhost:3001/newdata
+# Content-Type: application/json
+
+# {
+#     "tabledata":[
+#         {
+
+#             "value1":11111,
+#             "value2":22222,
+#             "value3":33333,
+#             "value4":44444
+#         },
+#         {
+
+#             "value1":44444,
+#             "value2":55555,
+#             "value3":66666,
+#             "value4":44444
+#         },
+#         {
+
+#             "value1":44444,
+#             "value2":55555,
+#             "value3":66666,
+#             "value4":44444
+#         }
+#     ]
+# }
+
+
+# ###
+# POST http://localhost:3001/newdata
+# Content-Type: application/json
+
+# [
+#   {
+#     "id": 1,
+#     "email": "test2556@teste.com",
+#     "name": "myUser2",
+#     "role": "admin",
+#     "status": true,
+#     "password": null,
+#     "salt": null,
+#     "confirmationToken": null,
+#     "recoverToken": null,
+#     "createAt": "2022-09-25T02:09:58.008Z",
+#     "updatedAt": "2022-09-25T02:09:58.008Z"
+#   },
+#   {
+#     "id": 4,
+#     "email": "test25@teste.com",
+#     "name": "myUser22",
+#     "role": "admin",
+#     "status": true,
+#     "password": null,
+#     "salt": null,
+#     "confirmationToken": null,
+#     "recoverToken": null,
+#     "createAt": "2022-09-25T02:10:35.487Z",
+#     "updatedAt": "2022-09-25T02:10:35.487Z"
+#   }
+# ]
+
+###
+POST http://localhost:3001/newdata
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "Order_Date": "01/02/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 2,
+    "Order_Date": "01/03/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 3,
+    "Order_Date": "01/03/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 4,
+    "Order_Date": "01/03/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 5,
+    "Order_Date": "01/03/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 6,
+    "Order_Date": "01/03/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 7,
+    "Order_Date": "01/03/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 8,
+    "Order_Date": "01/03/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 9,
+    "Order_Date": "01/03/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 10,
+    "Order_Date": "01/03/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 11,
+    "Order_Date": "01/03/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 12,
+    "Order_Date": "01/04/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 13,
+    "Order_Date": "01/04/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 14,
+    "Order_Date": "01/04/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 15,
+    "Order_Date": "01/04/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 16,
+    "Order_Date": "01/06/14",
+    "Quantity": "7"
+  },
+  {
+    "id": 17,
+    "Order_Date": "01/06/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 18,
+    "Order_Date": "01/06/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 19,
+    "Order_Date": "01/06/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 20,
+    "Order_Date": "01/06/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 21,
+    "Order_Date": "01/06/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 22,
+    "Order_Date": "01/06/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 23,
+    "Order_Date": "01/06/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 24,
+    "Order_Date": "01/06/14",
+    "Quantity": "7"
+  },
+  {
+    "id": 25,
+    "Order_Date": "01/06/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 26,
+    "Order_Date": "01/06/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 27,
+    "Order_Date": "01/07/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 28,
+    "Order_Date": "01/07/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 29,
+    "Order_Date": "01/07/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 30,
+    "Order_Date": "01/08/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 31,
+    "Order_Date": "01/08/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 32,
+    "Order_Date": "01/08/14",
+    "Quantity": "1"
+  },
+  {
+    "id": 33,
+    "Order_Date": "01/08/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 34,
+    "Order_Date": "01/08/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 35,
+    "Order_Date": "01/08/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 36,
+    "Order_Date": "01/09/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 37,
+    "Order_Date": "01/09/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 38,
+    "Order_Date": "01/09/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 39,
+    "Order_Date": "01/09/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 40,
+    "Order_Date": "01/09/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 41,
+    "Order_Date": "01/10/14",
+    "Quantity": "1"
+  },
+  {
+    "id": 42,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 43,
+    "Order_Date": "01/11/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 44,
+    "Order_Date": "01/11/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 45,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 46,
+    "Order_Date": "01/11/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 47,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 48,
+    "Order_Date": "01/11/14",
+    "Quantity": "12"
+  },
+  {
+    "id": 49,
+    "Order_Date": "01/11/14",
+    "Quantity": "9"
+  },
+  {
+    "id": 50,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 51,
+    "Order_Date": "01/11/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 52,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 53,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 54,
+    "Order_Date": "01/11/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 55,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 56,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 57,
+    "Order_Date": "01/11/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 58,
+    "Order_Date": "01/11/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 59,
+    "Order_Date": "01/11/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 60,
+    "Order_Date": "01/11/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 61,
+    "Order_Date": "01/11/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 62,
+    "Order_Date": "01/12/14",
+    "Quantity": "8"
+  },
+  {
+    "id": 63,
+    "Order_Date": "01/12/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 64,
+    "Order_Date": "01/12/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 65,
+    "Order_Date": "01/12/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 66,
+    "Order_Date": "01/12/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 67,
+    "Order_Date": "01/12/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 68,
+    "Order_Date": "01/12/14",
+    "Quantity": "7"
+  },
+  {
+    "id": 69,
+    "Order_Date": "01/12/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 70,
+    "Order_Date": "01/12/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 71,
+    "Order_Date": "01/12/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 72,
+    "Order_Date": "01/12/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 73,
+    "Order_Date": "01/12/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 74,
+    "Order_Date": "13/01/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 75,
+    "Order_Date": "13/01/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 76,
+    "Order_Date": "13/01/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 77,
+    "Order_Date": "13/01/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 78,
+    "Order_Date": "13/01/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 79,
+    "Order_Date": "13/01/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 80,
+    "Order_Date": "13/01/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 81,
+    "Order_Date": "13/01/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 82,
+    "Order_Date": "13/01/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 83,
+    "Order_Date": "13/01/14",
+    "Quantity": "7"
+  },
+  {
+    "id": 84,
+    "Order_Date": "13/01/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 85,
+    "Order_Date": "14/01/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 86,
+    "Order_Date": "15/01/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 87,
+    "Order_Date": "16/01/14",
+    "Quantity": "6"
+  },
+  {
+    "id": 88,
+    "Order_Date": "16/01/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 89,
+    "Order_Date": "16/01/14",
+    "Quantity": "2"
+  },
+  {
+    "id": 90,
+    "Order_Date": "16/01/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 91,
+    "Order_Date": "18/01/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 92,
+    "Order_Date": "19/01/14",
+    "Quantity": "10"
+  },
+  {
+    "id": 93,
+    "Order_Date": "19/01/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 94,
+    "Order_Date": "19/01/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 95,
+    "Order_Date": "19/01/14",
+    "Quantity": "5"
+  },
+  {
+    "id": 96,
+    "Order_Date": "20/01/14",
+    "Quantity": "7"
+  },
+  {
+    "id": 97,
+    "Order_Date": "20/01/14",
+    "Quantity": "7"
+  },
+  {
+    "id": 98,
+    "Order_Date": "20/01/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 99,
+    "Order_Date": "20/01/14",
+    "Quantity": "3"
+  },
+  {
+    "id": 100,
+    "Order_Date": "20/01/14",
+    "Quantity": "3"
+  }
+]

@@ -50,6 +50,8 @@ RUN pip install --no-cache-dir --upgrade prophet
 RUN pip install -U Flask
 
 RUN pip install -U flask-cors
+# to use async functions
+# RUN pip install aioflask
 
 RUN pip install  --upgrade plotly
 # RUN pip install prophet
@@ -58,7 +60,8 @@ RUN pip install  --upgrade plotly
 
 # WORKDIR /home/node/app2
 
-RUN python finally.py
-ENTRYPOINT ["tail", "-f", "/dev/null"]
+# RUN python finally.py
+# ENTRYPOINT ["tail", "-f", "/dev/null"]
+ENTRYPOINT ["python", "./finally.py"]
 
 
