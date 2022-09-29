@@ -32,6 +32,9 @@ If you have problem with Docker maybe a possible solution:
    and after that
    2- Delete all imagens: docker rmi -f $(docker images -aq)
 
+OR only use >  docker system prune -a
+If you have wsl you can shutdown and restart it.
+
 Some times you need to try multiple times run docker-compose up --build,
 yes maybe the server is down... have some problems and etc. This is common in
 multiples stages of the instalation. This is a pain... 

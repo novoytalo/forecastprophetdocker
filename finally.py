@@ -8,7 +8,8 @@ import sys
 import pickle
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
-
+import logging
+logging.getLogger('fbprophet').setLevel(logging.WARNING) 
 # this call is only executed one time. Cause need to use the endpoint '/forecast_like_katana-ml'
 # if you need to use only json this endpoint can be deleted. No problems.
 # but all the time you need to retraining/fit
@@ -25,10 +26,11 @@ def newdata():
 @app.route("/forecast_json", methods=['GET'])
 def predict():
     json_in = request.json
-    print (request.json, file=sys.stderr)
+    # print (request.json, file=sys.stderr)
     try:
         forecast_result = prophetNewPrevision2.calcProphet(json_in)
-        json_transformation= forecast_result.to_json( orient='records')
+        # print (forecast_result, file=sys.stderr)
+        json_transformation= forecast_result.to_json(orient='records', date_format='iso')
     except:
         json_transformation= []
     # print(json_transformation, file=sys.stderr)
@@ -54,5 +56,9 @@ def predictUsingArchives():
     return ret
 
 if __name__ == "__main__":
+    # from waitress import serve
     # debug True = hot heload = dev mode
+    #production server using Waitress
+    # serve(app, host="0.0.0.0", port=3001)
+    #debug develop server
     app.run(debug=True, host='0.0.0.0', port=3001)

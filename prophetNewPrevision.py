@@ -42,7 +42,7 @@ def calcProphet ():
     # plt.axvline(datenow, color="k", linestyle=":")
     # plt.show()
 
-    forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][-90:]
+    forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][-10:]
     #  show trends plot
     # fig2 = m.plot_components(forecast)
     

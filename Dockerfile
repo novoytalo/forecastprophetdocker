@@ -28,6 +28,7 @@ RUN pip install -U flask-cors
 RUN pip install  --upgrade plotly
 # RUN pip install prophet
 
+# RUN pin install waitress
 
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
 ENTRYPOINT ["python", "./finally.py"]
