@@ -520,7 +520,7 @@ Content-Type: application/json
 
 ###
 #Data using only json and don't need any archive on the service.
-GET http://localhost:3001/forecast_json
+GET http://localhost:3001/forecast_json/2
 Content-Type: application/json
 
 [

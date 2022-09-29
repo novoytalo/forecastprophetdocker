@@ -6,7 +6,7 @@ import sys
 from collections import OrderedDict
 from datetime import date
 
-def calcProphet (value_json):
+def calcProphet (value_json, periods):
     df=pd.DataFrame(value_json)
     # reorder collumns
     df = df[['Order_Date', 'Quantity']].dropna()
@@ -24,10 +24,11 @@ def calcProphet (value_json):
 
     m = Prophet()
     m.fit(d_df)
-    future = m.make_future_dataframe(periods=30)
+    # future = m.make_future_dataframe(periods=30)
+    future = m.make_future_dataframe(periods)
     forecast = m.predict(future)
     forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
     
-    forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][-10:]
-    print (forecast, file=sys.stderr)
+    forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][-periods:]
+    
     return forecast

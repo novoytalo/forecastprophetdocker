@@ -23,12 +23,12 @@ def newdata():
     df = pd.json_normalize(value)
     df.to_csv('csvs/mod.csv')
     return value
-@app.route("/forecast_json", methods=['GET'])
-def predict():
+@app.route("/forecast_json/<int:page_id>", methods=['GET'])
+def predict(page_id):
     json_in = request.json
     # print (request.json, file=sys.stderr)
     try:
-        forecast_result = prophetNewPrevision2.calcProphet(json_in)
+        forecast_result = prophetNewPrevision2.calcProphet(json_in, page_id)
         # print (forecast_result, file=sys.stderr)
         json_transformation= forecast_result.to_json(orient='records', date_format='iso')
     except:
@@ -56,9 +56,9 @@ def predictUsingArchives():
     return ret
 
 if __name__ == "__main__":
-    # from waitress import serve
+    from waitress import serve
     # debug True = hot heload = dev mode
     #production server using Waitress
-    # serve(app, host="0.0.0.0", port=3001)
+    serve(app, host="0.0.0.0", port=3001)
     #debug develop server
-    app.run(debug=True, host='0.0.0.0', port=3001)
+    # app.run(debug=True, host='0.0.0.0', port=3001)
