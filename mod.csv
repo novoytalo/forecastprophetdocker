@@ -1,3 +1,0 @@
-,id,email,name,role,status,password,salt,confirmationToken,recoverToken,createAt,updatedAt
-0,1,test2556@teste.com,myUser2,admin,True,,,,,2022-09-25T02:09:58.008Z,2022-09-25T02:09:58.008Z
-1,4,test25@teste.com,myUser22,admin,True,,,,,2022-09-25T02:10:35.487Z,2022-09-25T02:10:35.487Z

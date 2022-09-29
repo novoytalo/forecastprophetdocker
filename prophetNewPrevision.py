@@ -4,6 +4,7 @@ from prophet import Prophet
 
 
 def calcProphet ():
+    
     # df2=pd.read_csv('mod.csv')
     df = pd.read_csv('Dow Jones Iron & Steel Historical Data.csv')
     df = df[['Date', 'Price']].dropna()
@@ -34,18 +35,17 @@ def calcProphet ():
     datenow = datetime(2019, 7, 2)
     dateend = datenow + timedelta(days=90)
     datestart = dateend - timedelta(days=450)
-    plt.xlim([datestart, dateend])
-    plt.title("Iron/steel forecast", fontsize=20)
-    plt.xlabel("Day", fontsize=20)
-    plt.ylabel("Iron/steel price", fontsize=20)
-    plt.axvline(datenow, color="k", linestyle=":")
-    plt.show()
-
+    # plt.xlim([datestart, dateend])
+    # plt.title("Iron/steel forecast", fontsize=20)
+    # plt.xlabel("Day", fontsize=20)
+    # plt.ylabel("Iron/steel price", fontsize=20)
+    # plt.axvline(datenow, color="k", linestyle=":")
+    # plt.show()
 
     forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][-90:]
-
     #  show trends plot
-    fig2 = m.plot_components(forecast)
+    # fig2 = m.plot_components(forecast)
+    
     return m
     #cross validation, showing errors esperados 
 

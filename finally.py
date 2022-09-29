@@ -1,63 +1,47 @@
-
-
-# The model should be re-trained when new data becomes available. There is no point to re-train model, if data is not changed. Save model instead and use it again, when user wants to call predict function. Use pickle functionality for that:
 from xml.dom.minidom import TypeInfo
 from xml.etree.ElementTree import tostring
 import pandas as pd
-import csv
-import json
+import prophetNewPrevision
 import prophetNewPrevision2
 from crypt import methods
+import sys
 import pickle
-# from prophet import Prophet
-# m = Prophet()
-m = prophetNewPrevision2.calcProphet()
-with open('forecast_model.pckl', 'wb') as fout:
-    pickle.dump(m, fout)
-with open('forecast_model.pckl', 'rb') as fin:
-    m2 = pickle.load(fin)
-    
- 
-#expose 3001
 from flask import Flask, jsonify, request
 from flask_cors import CORS, cross_origin
 
+# this call is only executed one time. Cause need to use the endpoint '/forecast_like_katana-ml'
+# if you need to use only json this endpoint can be deleted. No problems.
+# but all the time you need to retraining/fit
+m = prophetNewPrevision.calcProphet()
+print('FLASK CHANGED', file=sys.stderr)
 app = Flask(__name__)
 CORS(app)
 @app.route("/newdata", methods=['POST'])
 def newdata():
     value=request.json
-    print(value)
-
-    
-    # df=pd.DataFrame.from_dict(value)
-    # df=pd.read_json(value)
-    # value.to_csv('mod.csv')
-    # df.to_csv('mod.csv')
-    
-    # df = pd.json_normalize(value['values'])
-    # extract_data=value['tabledata']
-    # data_file= open('csvs/mod.csv', 'w')
-    # csv_writer=csv.writer(data_file)
-    # count = 0
-    # for data in value:
-    #     if count == 0:
-    #         header = data.keys()
-    #         csv_writer.writerow(header)
-    #         count += 1
-    # csv_writer.writerow(data.values())
- 
-    # data_file.close()
-    
-    # value=value['tabledata']
     df = pd.json_normalize(value)
     df.to_csv('csvs/mod.csv')
     return value
-    # print(request.json)
-    # prophetNewPrevision.calcProphet()
-@app.route("/katana-ml/api/v1.0/forecast/ironsteel", methods=['GET'])
+@app.route("/forecast_json", methods=['GET'])
 def predict():
-    # prophetNewPrevision.calcProphet()
+    json_in = request.json
+    print (request.json, file=sys.stderr)
+    try:
+        forecast_result = prophetNewPrevision2.calcProphet(json_in)
+        json_transformation= forecast_result.to_json( orient='records')
+    except:
+        json_transformation= []
+    # print(json_transformation, file=sys.stderr)
+    return json_transformation
+@app.route("/forecast_like_katana-ml", methods=['GET'])
+#forecast using archive .csv ... like the exemple base. Don't need fit again the data
+def predictUsingArchives():
+    horizon = int(request.json['horizon'])
+        
+    with open('forecast_model.pckl', 'wb') as fout:
+        pickle.dump(m, fout)
+    with open('forecast_model.pckl', 'rb') as fin:
+        m2 = pickle.load(fin)
     horizon = int(request.json['horizon'])
     
     future2 = m2.make_future_dataframe(periods=horizon)
@@ -68,9 +52,7 @@ def predict():
     ret = data.to_json(orient='records', date_format='iso')
     
     return ret
-# running REST interface, port=3000 for direct test
 
-    
 if __name__ == "__main__":
     # debug True = hot heload = dev mode
     app.run(debug=True, host='0.0.0.0', port=3001)
