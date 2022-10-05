@@ -10,6 +10,63 @@ Content-Type: application/json
 
 
 # Creating data to .csv if u need this tipe os aprouch
+
+###
+GET http://localhost:3001/forecast_json/10
+Content-Type: application/json
+
+[
+  {
+    "id": 1,
+    "Order_Date": "2014/01/03",
+    "Quantity": "2"
+  },
+  {
+    "id": 2,
+    "Order_Date": "2014/01/04",
+    "Quantity": "3"
+  },
+  {
+    "id": 3,
+    "Order_Date": "2014/01/04",
+    "Quantity": "3"
+  },
+  {
+    "id": 4,
+    "Order_Date": "2014/01/04",
+    "Quantity": "2"
+  },
+  {
+    "id": 5,
+    "Order_Date": "2014/01/05",
+    "Quantity": "3"
+  },
+  {
+    "id": 6,
+    "Order_Date": "2014/01/06",
+    "Quantity": "3"
+  },
+  {
+    "id": 7,
+    "Order_Date": "2014/01/06",
+    "Quantity": "3"
+  },
+  {
+    "id": 8,
+    "Order_Date": "2014/01/06",
+    "Quantity": "9"
+  },
+  {
+    "id": 9,
+    "Order_Date": "2014/01/06",
+    "Quantity": "2"
+  },
+  {
+    "id": 10,
+    "Order_Date": "2014/01/06",
+    "Quantity": "2"
+  }
+]
 ###
 POST http://localhost:3001/newdata
 Content-Type: application/json
@@ -520,508 +577,509 @@ Content-Type: application/json
 
 ###
 #Data using only json and don't need any archive on the service.
-GET http://localhost:3001/forecast_json/2
+# GET http://localhost:3001/forecast_json/360
+GET http://localhost:3001/forecast_json/10
 Content-Type: application/json
 
 [
   {
     "id": 1,
-    "Order_Date": "01/02/14",
-    "Quantity": "6"
-  },
-  {
-    "id": 2,
-    "Order_Date": "01/03/14",
+    "Order_Date": "2014/01/03",
     "Quantity": "2"
   },
   {
+    "id": 2,
+    "Order_Date": "2014/01/04",
+    "Quantity": "3"
+  },
+  {
     "id": 3,
-    "Order_Date": "01/03/14",
+    "Order_Date": "2014/01/04",
     "Quantity": "3"
   },
   {
     "id": 4,
-    "Order_Date": "01/03/14",
-    "Quantity": "6"
+    "Order_Date": "2014/01/04",
+    "Quantity": "2"
   },
   {
     "id": 5,
-    "Order_Date": "01/03/14",
+    "Order_Date": "2014/01/05",
     "Quantity": "3"
   },
   {
     "id": 6,
-    "Order_Date": "01/03/14",
-    "Quantity": "5"
+    "Order_Date": "2014/01/06",
+    "Quantity": "3"
   },
   {
     "id": 7,
-    "Order_Date": "01/03/14",
-    "Quantity": "6"
+    "Order_Date": "2014/01/06",
+    "Quantity": "3"
   },
   {
     "id": 8,
-    "Order_Date": "01/03/14",
-    "Quantity": "6"
+    "Order_Date": "2014/01/06",
+    "Quantity": "9"
   },
   {
     "id": 9,
-    "Order_Date": "01/03/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 10,
-    "Order_Date": "01/03/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 11,
-    "Order_Date": "01/03/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 12,
-    "Order_Date": "01/04/14",
+    "Order_Date": "2014/01/06",
     "Quantity": "2"
   },
   {
+    "id": 10,
+    "Order_Date": "2014/01/06",
+    "Quantity": "2"
+  },
+  {
+    "id": 11,
+    "Order_Date": "2014/01/06",
+    "Quantity": "2"
+  },
+  {
+    "id": 12,
+    "Order_Date": "2014/01/06",
+    "Quantity": "4"
+  },
+  {
     "id": 13,
-    "Order_Date": "01/04/14",
+    "Order_Date": "2014/01/06",
     "Quantity": "4"
   },
   {
     "id": 14,
-    "Order_Date": "01/04/14",
-    "Quantity": "4"
+    "Order_Date": "2014/01/06",
+    "Quantity": "1"
   },
   {
     "id": 15,
-    "Order_Date": "01/04/14",
-    "Quantity": "2"
+    "Order_Date": "2014/01/07",
+    "Quantity": "3"
   },
   {
     "id": 16,
-    "Order_Date": "01/06/14",
+    "Order_Date": "2014/01/07",
     "Quantity": "7"
   },
   {
     "id": 17,
-    "Order_Date": "01/06/14",
+    "Order_Date": "2014/01/09",
     "Quantity": "2"
   },
   {
     "id": 18,
-    "Order_Date": "01/06/14",
-    "Quantity": "6"
+    "Order_Date": "2014/01/09",
+    "Quantity": "3"
   },
   {
     "id": 19,
-    "Order_Date": "01/06/14",
-    "Quantity": "5"
-  },
-  {
-    "id": 20,
-    "Order_Date": "01/06/14",
-    "Quantity": "4"
-  },
-  {
-    "id": 21,
-    "Order_Date": "01/06/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 22,
-    "Order_Date": "01/06/14",
-    "Quantity": "6"
-  },
-  {
-    "id": 23,
-    "Order_Date": "01/06/14",
-    "Quantity": "6"
-  },
-  {
-    "id": 24,
-    "Order_Date": "01/06/14",
-    "Quantity": "7"
-  },
-  {
-    "id": 25,
-    "Order_Date": "01/06/14",
-    "Quantity": "4"
-  },
-  {
-    "id": 26,
-    "Order_Date": "01/06/14",
-    "Quantity": "5"
-  },
-  {
-    "id": 27,
-    "Order_Date": "01/07/14",
-    "Quantity": "5"
-  },
-  {
-    "id": 28,
-    "Order_Date": "01/07/14",
-    "Quantity": "2"
-  },
-  {
-    "id": 29,
-    "Order_Date": "01/07/14",
-    "Quantity": "6"
-  },
-  {
-    "id": 30,
-    "Order_Date": "01/08/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 31,
-    "Order_Date": "01/08/14",
-    "Quantity": "4"
-  },
-  {
-    "id": 32,
-    "Order_Date": "01/08/14",
+    "Order_Date": "2014/01/10",
     "Quantity": "1"
   },
   {
-    "id": 33,
-    "Order_Date": "01/08/14",
+    "id": 20,
+    "Order_Date": "2014/01/10",
+    "Quantity": "1"
+  },
+  {
+    "id": 21,
+    "Order_Date": "2014/01/11",
     "Quantity": "2"
   },
   {
-    "id": 34,
-    "Order_Date": "01/08/14",
+    "id": 22,
+    "Order_Date": "2014/01/13",
+    "Quantity": "2"
+  },
+  {
+    "id": 23,
+    "Order_Date": "2014/01/13",
     "Quantity": "3"
   },
   {
-    "id": 35,
-    "Order_Date": "01/08/14",
+    "id": 24,
+    "Order_Date": "2014/01/13",
+    "Quantity": "6"
+  },
+  {
+    "id": 25,
+    "Order_Date": "2014/01/13",
+    "Quantity": "3"
+  },
+  {
+    "id": 26,
+    "Order_Date": "2014/01/13",
+    "Quantity": "6"
+  },
+  {
+    "id": 27,
+    "Order_Date": "2014/01/13",
+    "Quantity": "6"
+  },
+  {
+    "id": 28,
+    "Order_Date": "2014/01/13",
+    "Quantity": "5"
+  },
+  {
+    "id": 29,
+    "Order_Date": "2014/01/13",
+    "Quantity": "3"
+  },
+  {
+    "id": 30,
+    "Order_Date": "2014/01/13",
+    "Quantity": "5"
+  },
+  {
+    "id": 31,
+    "Order_Date": "2014/01/13",
+    "Quantity": "7"
+  },
+  {
+    "id": 32,
+    "Order_Date": "2014/01/13",
     "Quantity": "2"
   },
   {
+    "id": 33,
+    "Order_Date": "2014/01/14",
+    "Quantity": "4"
+  },
+  {
+    "id": 34,
+    "Order_Date": "2014/01/15",
+    "Quantity": "5"
+  },
+  {
+    "id": 35,
+    "Order_Date": "2014/01/16",
+    "Quantity": "6"
+  },
+  {
     "id": 36,
-    "Order_Date": "01/09/14",
+    "Order_Date": "2014/01/16",
     "Quantity": "3"
   },
   {
     "id": 37,
-    "Order_Date": "01/09/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 38,
-    "Order_Date": "01/09/14",
-    "Quantity": "6"
-  },
-  {
-    "id": 39,
-    "Order_Date": "01/09/14",
+    "Order_Date": "2014/01/16",
     "Quantity": "2"
   },
   {
-    "id": 40,
-    "Order_Date": "01/09/14",
+    "id": 38,
+    "Order_Date": "2014/01/16",
     "Quantity": "3"
   },
   {
-    "id": 41,
-    "Order_Date": "01/10/14",
-    "Quantity": "1"
-  },
-  {
-    "id": 42,
-    "Order_Date": "01/11/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 43,
-    "Order_Date": "01/11/14",
+    "id": 39,
+    "Order_Date": "2014/01/18",
     "Quantity": "4"
   },
   {
-    "id": 44,
-    "Order_Date": "01/11/14",
+    "id": 40,
+    "Order_Date": "2014/01/19",
+    "Quantity": "10"
+  },
+  {
+    "id": 41,
+    "Order_Date": "2014/01/19",
+    "Quantity": "4"
+  },
+  {
+    "id": 42,
+    "Order_Date": "2014/01/19",
     "Quantity": "5"
+  },
+  {
+    "id": 43,
+    "Order_Date": "2014/01/19",
+    "Quantity": "5"
+  },
+  {
+    "id": 44,
+    "Order_Date": "2014/01/20",
+    "Quantity": "7"
   },
   {
     "id": 45,
-    "Order_Date": "01/11/14",
-    "Quantity": "3"
+    "Order_Date": "2014/01/20",
+    "Quantity": "7"
   },
   {
     "id": 46,
-    "Order_Date": "01/11/14",
-    "Quantity": "5"
+    "Order_Date": "2014/01/20",
+    "Quantity": "4"
   },
   {
     "id": 47,
-    "Order_Date": "01/11/14",
+    "Order_Date": "2014/01/20",
     "Quantity": "3"
   },
   {
     "id": 48,
-    "Order_Date": "01/11/14",
-    "Quantity": "12"
-  },
-  {
-    "id": 49,
-    "Order_Date": "01/11/14",
-    "Quantity": "9"
-  },
-  {
-    "id": 50,
-    "Order_Date": "01/11/14",
+    "Order_Date": "2014/01/20",
     "Quantity": "3"
   },
   {
+    "id": 49,
+    "Order_Date": "2014/01/20",
+    "Quantity": "3"
+  },
+  {
+    "id": 50,
+    "Order_Date": "2014/01/20",
+    "Quantity": "2"
+  },
+  {
     "id": 51,
-    "Order_Date": "01/11/14",
+    "Order_Date": "2014/01/20",
     "Quantity": "2"
   },
   {
     "id": 52,
-    "Order_Date": "01/11/14",
-    "Quantity": "3"
+    "Order_Date": "2014/01/20",
+    "Quantity": "1"
   },
   {
     "id": 53,
-    "Order_Date": "01/11/14",
+    "Order_Date": "2014/01/20",
     "Quantity": "3"
   },
   {
     "id": 54,
-    "Order_Date": "01/11/14",
+    "Order_Date": "2014/01/20",
     "Quantity": "5"
   },
   {
     "id": 55,
-    "Order_Date": "01/11/14",
-    "Quantity": "3"
+    "Order_Date": "2014/01/20",
+    "Quantity": "4"
   },
   {
     "id": 56,
-    "Order_Date": "01/11/14",
-    "Quantity": "3"
+    "Order_Date": "2014/01/20",
+    "Quantity": "2"
   },
   {
     "id": 57,
-    "Order_Date": "01/11/14",
-    "Quantity": "6"
+    "Order_Date": "2014/01/20",
+    "Quantity": "3"
   },
   {
     "id": 58,
-    "Order_Date": "01/11/14",
-    "Quantity": "2"
+    "Order_Date": "2014/01/20",
+    "Quantity": "3"
   },
   {
     "id": 59,
-    "Order_Date": "01/11/14",
-    "Quantity": "2"
+    "Order_Date": "2014/01/20",
+    "Quantity": "5"
   },
   {
     "id": 60,
-    "Order_Date": "01/11/14",
-    "Quantity": "2"
+    "Order_Date": "2014/01/20",
+    "Quantity": "1"
   },
   {
     "id": 61,
-    "Order_Date": "01/11/14",
+    "Order_Date": "2014/01/21",
     "Quantity": "3"
   },
   {
     "id": 62,
-    "Order_Date": "01/12/14",
-    "Quantity": "8"
+    "Order_Date": "2014/01/23",
+    "Quantity": "6"
   },
   {
     "id": 63,
-    "Order_Date": "01/12/14",
-    "Quantity": "4"
+    "Order_Date": "2014/01/23",
+    "Quantity": "3"
   },
   {
     "id": 64,
-    "Order_Date": "01/12/14",
+    "Order_Date": "2014/01/26",
     "Quantity": "3"
   },
   {
     "id": 65,
-    "Order_Date": "01/12/14",
-    "Quantity": "4"
+    "Order_Date": "2014/01/26",
+    "Quantity": "8"
   },
   {
     "id": 66,
-    "Order_Date": "01/12/14",
-    "Quantity": "2"
+    "Order_Date": "2014/01/26",
+    "Quantity": "3"
   },
   {
     "id": 67,
-    "Order_Date": "01/12/14",
+    "Order_Date": "2014/01/26",
     "Quantity": "2"
   },
   {
     "id": 68,
-    "Order_Date": "01/12/14",
-    "Quantity": "7"
+    "Order_Date": "2014/01/26",
+    "Quantity": "13"
   },
   {
     "id": 69,
-    "Order_Date": "01/12/14",
-    "Quantity": "6"
-  },
-  {
-    "id": 70,
-    "Order_Date": "01/12/14",
+    "Order_Date": "2014/01/26",
     "Quantity": "3"
   },
   {
+    "id": 70,
+    "Order_Date": "2014/01/26",
+    "Quantity": "2"
+  },
+  {
     "id": 71,
-    "Order_Date": "01/12/14",
+    "Order_Date": "2014/01/26",
     "Quantity": "2"
   },
   {
     "id": 72,
-    "Order_Date": "01/12/14",
-    "Quantity": "3"
+    "Order_Date": "2014/01/26",
+    "Quantity": "2"
   },
   {
     "id": 73,
-    "Order_Date": "01/12/14",
-    "Quantity": "2"
+    "Order_Date": "2014/01/27",
+    "Quantity": "1"
   },
   {
     "id": 74,
-    "Order_Date": "13/01/14",
-    "Quantity": "2"
+    "Order_Date": "2014/01/27",
+    "Quantity": "3"
   },
   {
     "id": 75,
-    "Order_Date": "13/01/14",
-    "Quantity": "3"
+    "Order_Date": "2014/01/27",
+    "Quantity": "4"
   },
   {
     "id": 76,
-    "Order_Date": "13/01/14",
-    "Quantity": "6"
+    "Order_Date": "2014/01/28",
+    "Quantity": "1"
   },
   {
     "id": 77,
-    "Order_Date": "13/01/14",
-    "Quantity": "3"
+    "Order_Date": "2014/01/30",
+    "Quantity": "2"
   },
   {
     "id": 78,
-    "Order_Date": "13/01/14",
-    "Quantity": "6"
+    "Order_Date": "2014/01/30",
+    "Quantity": "2"
   },
   {
     "id": 79,
-    "Order_Date": "13/01/14",
-    "Quantity": "6"
+    "Order_Date": "2014/01/31",
+    "Quantity": "2"
   },
   {
     "id": 80,
-    "Order_Date": "13/01/14",
-    "Quantity": "5"
+    "Order_Date": "2014/02/01",
+    "Quantity": "6"
   },
   {
     "id": 81,
-    "Order_Date": "13/01/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 82,
-    "Order_Date": "13/01/14",
+    "Order_Date": "2014/02/02",
     "Quantity": "5"
   },
   {
+    "id": 82,
+    "Order_Date": "2014/02/02",
+    "Quantity": "2"
+  },
+  {
     "id": 83,
-    "Order_Date": "13/01/14",
-    "Quantity": "7"
+    "Order_Date": "2014/02/02",
+    "Quantity": "5"
   },
   {
     "id": 84,
-    "Order_Date": "13/01/14",
+    "Order_Date": "2014/02/03",
     "Quantity": "2"
   },
   {
     "id": 85,
-    "Order_Date": "14/01/14",
-    "Quantity": "4"
+    "Order_Date": "2014/02/03",
+    "Quantity": "3"
   },
   {
     "id": 86,
-    "Order_Date": "15/01/14",
-    "Quantity": "5"
+    "Order_Date": "2014/02/04",
+    "Quantity": "3"
   },
   {
     "id": 87,
-    "Order_Date": "16/01/14",
-    "Quantity": "6"
+    "Order_Date": "2014/02/04",
+    "Quantity": "4"
   },
   {
     "id": 88,
-    "Order_Date": "16/01/14",
-    "Quantity": "3"
-  },
-  {
-    "id": 89,
-    "Order_Date": "16/01/14",
+    "Order_Date": "2014/02/04",
     "Quantity": "2"
   },
   {
+    "id": 89,
+    "Order_Date": "2014/02/06",
+    "Quantity": "4"
+  },
+  {
     "id": 90,
-    "Order_Date": "16/01/14",
-    "Quantity": "3"
+    "Order_Date": "2014/02/06",
+    "Quantity": "1"
   },
   {
     "id": 91,
-    "Order_Date": "18/01/14",
-    "Quantity": "4"
+    "Order_Date": "2014/02/06",
+    "Quantity": "5"
   },
   {
     "id": 92,
-    "Order_Date": "19/01/14",
-    "Quantity": "10"
+    "Order_Date": "2014/02/06",
+    "Quantity": "2"
   },
   {
     "id": 93,
-    "Order_Date": "19/01/14",
-    "Quantity": "4"
+    "Order_Date": "2014/02/07",
+    "Quantity": "7"
   },
   {
     "id": 94,
-    "Order_Date": "19/01/14",
-    "Quantity": "5"
-  },
-  {
-    "id": 95,
-    "Order_Date": "19/01/14",
-    "Quantity": "5"
-  },
-  {
-    "id": 96,
-    "Order_Date": "20/01/14",
-    "Quantity": "7"
-  },
-  {
-    "id": 97,
-    "Order_Date": "20/01/14",
-    "Quantity": "7"
-  },
-  {
-    "id": 98,
-    "Order_Date": "20/01/14",
+    "Order_Date": "2014/02/07",
     "Quantity": "4"
   },
   {
-    "id": 99,
-    "Order_Date": "20/01/14",
+    "id": 95,
+    "Order_Date": "2014/02/08",
+    "Quantity": "2"
+  },
+  {
+    "id": 96,
+    "Order_Date": "2014/02/11",
     "Quantity": "3"
   },
   {
+    "id": 97,
+    "Order_Date": "2014/02/11",
+    "Quantity": "6"
+  },
+  {
+    "id": 98,
+    "Order_Date": "2014/02/11",
+    "Quantity": "2"
+  },
+  {
+    "id": 99,
+    "Order_Date": "2014/02/11",
+    "Quantity": "1"
+  },
+  {
     "id": 100,
-    "Order_Date": "20/01/14",
+    "Order_Date": "2014/02/11",
     "Quantity": "3"
   }
 ]

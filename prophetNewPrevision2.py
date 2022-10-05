@@ -10,7 +10,9 @@ def calcProphet (value_json, periods):
     df=pd.DataFrame(value_json)
     # reorder collumns
     df = df[['Order_Date', 'Quantity']].dropna()
-    df['Order_Date'] = pd.to_datetime(df['Order_Date'])
+    #my data base data is on format dd/mm/yyyy
+    df['Order_Date'] = pd.to_datetime(df['Order_Date'], dayfirst=True)
+    print(df, file=sys.stderr)
     df = df.set_index('Order_Date')
     
     # daily_df = df.resample('D').mean()
@@ -28,7 +30,9 @@ def calcProphet (value_json, periods):
     future = m.make_future_dataframe(periods)
     forecast = m.predict(future)
     forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
+  
+    # forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][:-periods]
     
-    forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][-periods:]
     
+    # print ('forecast after: '+ forecast , file=sys.stderr)
     return forecast

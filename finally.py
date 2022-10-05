@@ -57,8 +57,8 @@ def predictUsingArchives():
 
 if __name__ == "__main__":
     from waitress import serve
+    serve(app, host="0.0.0.0", port=3001)
     # debug True = hot heload = dev mode
     #production server using Waitress
-    serve(app, host="0.0.0.0", port=3001)
     #debug develop server
     # app.run(debug=True, host='0.0.0.0', port=3001)
