@@ -23,7 +23,7 @@ def newdata():
     df = pd.json_normalize(value)
     df.to_csv('csvs/mod.csv')
     return value
-@app.route("/forecast_json/<int:page_id>", methods=['GET'])
+@app.route("/forecast_json/<int:page_id>", methods=['POST'])
 def predict(page_id):
     json_in = request.json
     # print (request.json, file=sys.stderr)
@@ -56,9 +56,9 @@ def predictUsingArchives():
     return ret
 
 if __name__ == "__main__":
-    from waitress import serve
-    serve(app, host="0.0.0.0", port=3001)
+    # from waitress import serve
+    # serve(app, host="0.0.0.0", port=3001)
     # debug True = hot heload = dev mode
     #production server using Waitress
     #debug develop server
-    # app.run(debug=True, host='0.0.0.0', port=3001)
+    app.run(debug=True, host='0.0.0.0', port=3001)

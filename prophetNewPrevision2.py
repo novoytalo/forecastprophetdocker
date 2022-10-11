@@ -20,6 +20,8 @@ def calcProphet (value_json, periods):
     # d_df = daily_df.reset_index().dropna()
     d_df = df.reset_index().dropna()
     d_df.columns = ['ds', 'y']
+    size_data_json=len(d_df)
+    # print (size_data_json, file=sys.stderr)
     # print (d_df, file=sys.stderr)
     # print (d_df, file=sys.stderr)
     # training
@@ -30,9 +32,10 @@ def calcProphet (value_json, periods):
     future = m.make_future_dataframe(periods)
     forecast = m.predict(future)
     forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()
-  
-    # forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][:-periods]
+    # cut data to show only the futurecast ... not the fit
+    fore= forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']][size_data_json:]
     
     
     # print ('forecast after: '+ forecast , file=sys.stderr)
-    return forecast
+    # return forecast
+    return fore
