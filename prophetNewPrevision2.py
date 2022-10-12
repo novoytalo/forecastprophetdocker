@@ -8,12 +8,15 @@ from datetime import date
 
 def calcProphet (value_json, periods):
     df=pd.DataFrame(value_json)
+    
     # reorder collumns
     df = df[['Order_Date', 'Quantity']].dropna()
+    # print ('errorrrr!', file=sys.stderr)
     #my data base data is on format dd/mm/yyyy
     df['Order_Date'] = pd.to_datetime(df['Order_Date'], dayfirst=True)
     print(df, file=sys.stderr)
     df = df.set_index('Order_Date')
+    
     
     # daily_df = df.resample('D').mean()
     # print (daily_df, file=sys.stderr)

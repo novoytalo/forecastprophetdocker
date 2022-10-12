@@ -16,7 +16,7 @@ Content-Type: application/json
 ###
 #can send only the date and quantity or more collumn
 # need to send without repeted days...(i choose to do this organization on front end)
-POST http://localhost:3001/forecast_json/5
+POST http://host.docker.internal:3001/forecast_json/10
 Content-Type: application/json
  
 [
@@ -48,6 +48,9 @@ Content-Type: application/json
 # {"id":11,"Order_Date": "2014/01/15", "Quantity": "5"}
 # ]
 
+
+
+# this data have some duplicate days.. so the Prophet don't work as imagined
 ###
 GET http://localhost:3001/forecast_json/10
 Content-Type: application/json

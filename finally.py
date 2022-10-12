@@ -6,9 +6,13 @@ import prophetNewPrevision2
 from crypt import methods
 import sys
 import pickle
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, Response
 from flask_cors import CORS, cross_origin
 import logging
+import json
+from flask_restful import Resource, Api
+
+# from query import execute_query, connect
 logging.getLogger('fbprophet').setLevel(logging.WARNING) 
 # this call is only executed one time. Cause need to use the endpoint '/forecast_like_katana-ml'
 # if you need to use only json this endpoint can be deleted. No problems.
@@ -26,15 +30,22 @@ def newdata():
 @app.route("/forecast_json/<int:page_id>", methods=['POST'])
 def predict(page_id):
     json_in = request.json
-    # print (request.json, file=sys.stderr)
+    print ('data in json', file=sys.stderr)
+    print (request.json, file=sys.stderr)
     try:
         forecast_result = prophetNewPrevision2.calcProphet(json_in, page_id)
         # print (forecast_result, file=sys.stderr)
-        json_transformation= forecast_result.to_json(orient='records', date_format='iso')
+        json_transformation= json.loads (forecast_result.to_json(orient='records', date_format='iso'))
+        # parsed = json.loads(json_transformation)
     except:
         json_transformation= []
     # print(json_transformation, file=sys.stderr)
-    return json_transformation
+    # return json_transformation,200,{'content-type':'application/json'}
+    # return json_transformation
+    
+    return json.dumps(json_transformation),200,{'content-type':'application/json'}
+    # return Response(json.dumps(json_transformation),  mimetype='application/json')
+    # return jsonify({'json_transformation':json_transformation})
 @app.route("/forecast_like_katana-ml", methods=['GET'])
 #forecast using archive .csv ... like the exemple base. Don't need fit again the data
 def predictUsingArchives():

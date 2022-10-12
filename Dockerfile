@@ -29,6 +29,9 @@ RUN pip install  --upgrade plotly
 # RUN pip install prophet
 
 # RUN pin install waitress
+# to use response for get response at axios
+# RUN pip install -U flask-cores
+RUN pip install Flask-RESTful
 
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
 ENTRYPOINT ["python", "./finally.py"]
