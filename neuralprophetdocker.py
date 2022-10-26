@@ -16,17 +16,18 @@ def neuralProphetCal(value_json,periods):
     d_df.columns = ['ds', 'y']
     size_data_json=len(d_df)
     
-    # print(d_df, file=sys.stderr)
-    #### original
-    # df = pd.read_csv('Dow Jones Iron & Steel Historical Data.csv')
-    # print(df, file=sys.stderr)
     m = NeuralProphet()
     print (d_df, file=sys.stderr)
-    # future = m.make_future_dataframe(periods)
+
     # metrics = m.fit(df, freq="D")
-    metrics = m.fit(d_df)
-    # future = m.make_future_dataframe(periods)
+    # metrics = m.fit(d_df, freq="D", epochs=1000)
+    metrics = m.fit(d_df, freq= "D")
     
-    forecast = m.predict(d_df)
-    print ('5OOOooooooooooo: ', file=sys.stderr)
+    future=m.make_future_dataframe(d_df,periods=periods)
+    forecast=m.predict(future)
+    print(forecast, file=sys.stderr)
+  
+    
+    # forecast = m.predict(d_df)
+    # print ('5OOOooooooooooo: ', file=sys.stderr)
     return forecast
