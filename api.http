@@ -33,6 +33,27 @@ Content-Type: application/json
 {"Order_Date": "2014/01/15", "Quantity": 5}
 ]
 
+#NeuralProhetCal
+###
+POST http://host.docker.internal:3001/forecast_json_neural_prophetcal/10
+Content-Type: application/json
+ 
+[
+{"Order_Date": "2014/01/03", "Quantity": 2},
+{"Order_Date": "2014/01/04", "Quantity": 8},
+{"Order_Date": "2014/01/05", "Quantity": 3},
+{"Order_Date": "2014/01/06", "Quantity": 30},
+{"Order_Date": "2014/01/07","Quantity": 10},
+{"Order_Date": "2014/01/09","Quantity": 5},
+{"Order_Date": "2014/01/10", "Quantity": 2},
+{"Order_Date": "2014/01/11", "Quantity": 2},
+{"Order_Date": "2014/01/13", "Quantity": 48},
+{"Order_Date": "2014/01/14", "Quantity": 4},
+{"Order_Date": "2014/01/15", "Quantity": 5}
+]
+
+
+
 ###
 #  [
 # {"id":1,"Order_Date": "2014/01/03", "Quantity": "2"},

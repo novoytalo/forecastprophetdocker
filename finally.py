@@ -1,6 +1,7 @@
 from xml.dom.minidom import TypeInfo
 from xml.etree.ElementTree import tostring
 import pandas as pd
+import neuralprophetdocker 
 import prophetNewPrevision
 import prophetNewPrevision2
 from crypt import methods
@@ -65,11 +66,26 @@ def predictUsingArchives():
     ret = data.to_json(orient='records', date_format='iso')
     
     return ret
+@app.route("/forecast_json_neural_prophetcal/<int:page_id>", methods=['POST'])
+def predictUsingNeuralProhetDocker(page_id):
+    json_in = request.json
+    # print ('data in json', file=sys.stderr)
+    # print (request.json, file=sys.stderr)
+    try:
+        forecast_result = neuralprophetdocker.neuralProphetCal(json_in, page_id)
+        
+        json_transformation= json.loads (forecast_result.to_json(orient='records', date_format='iso'))
+
+    except:
+        json_transformation= []
+
+    
+    return json.dumps(json_transformation),200,{'content-type':'application/json'}
 
 if __name__ == "__main__":
     # from waitress import serve
     # serve(app, host="0.0.0.0", port=3001)
     # debug True = hot heload = dev mode
-    #production server using Waitress
-    #debug develop server
+    # production server using Waitress
+    # debug develop server
     app.run(debug=True, host='0.0.0.0', port=3001)

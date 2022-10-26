@@ -32,6 +32,7 @@ def calcProphet (value_json, periods):
     m = Prophet()
     m.fit(d_df)
     # future = m.make_future_dataframe(periods=30)
+    
     future = m.make_future_dataframe(periods)
     forecast = m.predict(future)
     forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail()

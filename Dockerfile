@@ -33,7 +33,13 @@ RUN pip install  --upgrade plotly
 # RUN pip install -U flask-cores
 RUN pip install Flask-RESTful
 
+# Instal neural prophet
+RUN pip install neuralprophet
+
+
 # ENTRYPOINT ["tail", "-f", "/dev/null"]
 ENTRYPOINT ["python", "./finally.py"]
 # ENTRYPOINT ["python", "./prophetlikeKatana.py"]
+
+
 
